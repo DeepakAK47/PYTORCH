@@ -25,4 +25,5 @@
 # second_phase :
 
 ### L6 : (Datasets and Dataloaders)
-1. 
+1. Datasets class always return two things are len and first element of the dataset.
+2.
