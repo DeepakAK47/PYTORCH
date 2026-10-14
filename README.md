@@ -27,3 +27,20 @@
 ### L6 : (Datasets and Dataloaders)
 1. Datasets class always return two things are len and first element of the dataset.
 2.
+
+### L7 :(Building ANN using PYTORCH)
+1. 
+
+### L8 : (Building CNN Architecture using CNN)
+1. 
+
+### L9 : (Improving the performance of model)
+1. 
+
+### L10 : (Hyperparameter tuning)
+1.    
+
+### L11 : (Building CNN)
+
+
+### L12 : 
