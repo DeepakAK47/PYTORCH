@@ -1,46 +1,112 @@
-# first_phase :
+# PyTorch Learning Repository
 
-### L1 : (Intrduction to Python)
-1. Pytorch revolves around the tensor data structure.
-2. two main features are : Autograd and GPU support.
+This repository contains a progressive set of Jupyter notebooks for learning
+PyTorch, from tensor fundamentals and automatic differentiation to neural
+networks, CNNs, RNNs, GPU training, and transfer learning.
 
-### L2 : (Tensor in Pytorch)
-1. import torch  : It is used to import pytorch library.
-2. torch.Tensor : It is the main data structure in Pytorch.
+## Repository structure
 
-### L3 : (pytorch Autograd)
-1. Use autograd to compute gradients automatically.
-2. The autograd engine tracks all operations on tensors to compute gradients.
+```text
+.
+├── 1phase/
+│   ├── L2.ipynb
+│   ├── L3.ipynb
+│   ├── L4.ipynb
+│   ├── L5.ipynb
+│   └── breast-cancer.csv
+├── 2phase/
+│   ├── L6.ipynb
+│   ├── L7.ipynb
+│   ├── L8.ipynb
+│   ├── L9.ipynb
+│   ├── L10.ipynb
+│   ├── fmnist_small.csv
+│   └── data/MNIST/
+├── 3phase/
+│   ├── L11.ipynb
+│   ├── L12.ipynb
+│   ├── L13.ipynb
+│   └── L14.ipynb
+└── README.md
+```
 
-### L4 : (pytorch training pipeline)
-1. use torch.from_numpy() to convert numpy arrays to PyTorch tensors.
-2. use torch library for backpropagation and optimization of models.
+The `pytorch/` directory contains a local Python virtual environment. It is
+not required to understand the lessons and should generally not be committed
+or copied between machines.
 
-### L5 : (nn Module)
-1. torch.nn = PyTorch's toolbox for building neural networks.
-2. Use of different components like layers, loss functions, and optimizers to build and train models.
+## Learning path
 
+### Phase 1: PyTorch fundamentals
 
+| Lesson | Topic | What is covered |
+| --- | --- | --- |
+| [L2](./1phase/L2.ipynb) | Tensors in PyTorch | Importing PyTorch, checking the installed version, checking CUDA availability, and creating tensors with functions such as `torch.empty`, `torch.zeros`, and `torch.tensor`. |
+| [L3](./1phase/L3.ipynb) | Automatic differentiation | Computing derivatives manually and using `requires_grad=True` and the Autograd engine to calculate gradients automatically. |
+| [L4](./1phase/L4.ipynb) | Training pipeline | Loading tabular data with pandas, splitting data with scikit-learn, scaling features, encoding labels, converting NumPy arrays to tensors, and preparing a PyTorch model-training workflow. |
+| [L5](./1phase/L5.ipynb) | `torch.nn.Module` | Defining neural-network classes with `nn.Module`, fully connected layers, ReLU activations, dropout, and forward propagation. |
 
-# second_phase :
+### Phase 2: Data loading and model training
 
-### L6 : (Datasets and Dataloaders)
-1. Datasets class always return two things are len and first element of the dataset.
-2.
+| Lesson | Topic | What is covered |
+| --- | --- | --- |
+| [L6](./2phase/L6.ipynb) | Datasets and DataLoaders | Creating a custom `Dataset`, implementing `__len__` and `__getitem__`, batching data with `DataLoader`, shuffling samples, and loading MNIST with `torchvision`. |
+| [L7](./2phase/L7.ipynb) | Artificial neural network | Building an ANN for the Fashion-MNIST dataset, loading tabular pixel data, preparing train/test data, defining a model, and using a training loop. |
+| [L8](./2phase/L8.ipynb) | GPU training | Introducing the process for training a neural network on a GPU. The notebook currently points to the related Kaggle notebook for the full implementation. |
+| [L9](./2phase/L9.ipynb) | Model performance | Notes for improving model performance. The detailed implementation is currently referenced externally through Kaggle. |
+| [L10](./2phase/L10.ipynb) | Hyperparameter tuning | Introduction to tuning ANN hyperparameters. The notebook currently references the related Kaggle notebook. |
 
-### L7 :(Building ANN using PYTORCH)
-1. 
+### Phase 3: Advanced architectures
 
-### L8 : (Building CNN Architecture using CNN)
-1. 
+| Lesson | Topic | What is covered |
+| --- | --- | --- |
+| [L11](./3phase/L11.ipynb) | Convolutional neural network | Introduction to building a CNN. The notebook currently contains a topic outline and a Kaggle reference. |
+| [L12](./3phase/L12.ipynb) | Transfer learning | Introduction to transfer learning with a reference to the related Kaggle implementation. |
+| [L13](./3phase/L13.ipynb) | Recurrent neural network | Loading a question-and-answer dataset with pandas, inspecting its shape and records, and introducing RNN model development. |
+| [L14](./3phase/L14.ipynb) | Reserved lesson | The notebook is currently empty and available for future material. |
 
-### L9 : (Improving the performance of model)
-1. 
+## Datasets
 
-### L10 : (Hyperparameter tuning)
-1.    
+- [`1phase/breast-cancer.csv`](./1phase/breast-cancer.csv): tabular breast-cancer
+  classification data used in the training-pipeline lesson.
+- [`2phase/fmnist_small.csv`](./2phase/fmnist_small.csv): a small
+  Fashion-MNIST-style dataset with a `label` column and pixel features used by
+  the ANN lesson.
+- [`2phase/data/MNIST/`](./2phase/data/MNIST/): locally stored MNIST files,
+  including training and test images and labels.
+- [`3phase/data.csv`](./3phase/data.csv): question-and-answer pairs used as
+  the starting dataset for the RNN lesson.
 
-### L11 : (Building CNN)
+## Requirements
 
+The notebooks use Python and commonly use the following packages:
 
-### L12 : 
+- PyTorch
+- torchvision
+- NumPy
+- pandas
+- scikit-learn
+- Jupyter Notebook or JupyterLab
+
+The notebooks were created with Python 3.11 and PyTorch 2.13.0+cpu in the
+included environment. A CUDA-enabled PyTorch installation is required to run
+the GPU examples on a GPU.
+
+## Getting started
+
+1. Create and activate a Python virtual environment.
+2. Install PyTorch and the notebook dependencies for your platform.
+3. Start Jupyter Notebook or JupyterLab from the repository root.
+4. Open the lessons in order, beginning with `1phase/L2.ipynb`.
+
+For notebooks that load local CSV files, run them with the notebook's phase
+directory as the working directory, or update the relative data path to match
+your Jupyter working directory.
+
+## Notes
+
+- The `.ipynb_checkpoints/` directories are generated by Jupyter and are not
+  part of the learning sequence.
+- L8, L9, L10, L11, and L12 contain outlines or references to external Kaggle
+  material rather than complete local implementations.
+- The lessons are intended for learning and experimentation; review and
+  validate model results before using them for real-world decisions.
